@@ -349,8 +349,8 @@
         Cheese,
 
         // RatProto Stage Items
-        Springboard_Bouncy,
-        Springboard_Charged,
+        Springboard_RP,
+        Springboard_RP_Charged,
 
         // RatProto Carryables
         Stick,
