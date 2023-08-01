@@ -343,5 +343,18 @@
         // Incredibles objects
         Zip_Line,
         Rubble_Generator,
+
+
+        // RatProto Pickups
+        Cheese,
+
+        // RatProto Stage Items
+        Springboard_Bouncy,
+        Springboard_Charged,
+
+        // RatProto Carryables
+        Stick,
+        Nut Can,
+        Lantern,
     }
 }
