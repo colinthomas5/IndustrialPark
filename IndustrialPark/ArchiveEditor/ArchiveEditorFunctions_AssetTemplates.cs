@@ -243,6 +243,37 @@ namespace IndustrialPark
                 floatingBlocksTSSM
             });
 
+            // RatProto
+            ToolStripMenuItem ratproto = new ToolStripMenuItem("Rat Proto");
+            ratproto.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                pickupsRP,
+                carryablesRP,
+                stageitemsRP,
+            });
+
+            ToolStripMenuItem pickupsRP = new ToolStripMenuItem("Pickups");
+            pickupsRP.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                GetTemplateMenuItem(AssetTemplate.Cheese, eventHandler),
+            });
+
+            ToolStripMenuItem carryablesRP = new ToolStripMenuItem("Carryables");
+            carryablesRP.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                GetTemplateMenuItem(AssetTemplate.Stick, eventHandler),
+                GetTemplateMenuItem(AssetTemplate.Nut_Can, eventHandler),
+                GetTemplateMenuItem(AssetTemplate.Lantern, eventHandler),
+            });
+
+            ToolStripMenuItem stageitemsRP = new ToolStripMenuItem("Stage Items");
+            carryablesRP.DropDownItems.AddRange(new ToolStripItem[]
+            {
+                GetTemplateMenuItem(AssetTemplate.Springboard_RP, eventHandler),
+                GetTemplateMenuItem(AssetTemplate.Springboard_RP_Charged, eventHandler),
+            });
+            
+            // Scooby
             ToolStripMenuItem scoobyPickups = new ToolStripMenuItem("Pickups");
             scoobyPickups.DropDownItems.AddRange(new ToolStripItem[]
             {
@@ -434,7 +465,7 @@ namespace IndustrialPark
 
             var paste = GetTemplateMenuItem(AssetTemplate.Paste_Clipboard, eventHandler);
 
-            var items = new ToolStripItem[] { controllers, placeable, bfbb, tssm, scooby, incredibles, others, paste };
+            var items = new ToolStripItem[] { controllers, placeable, bfbb, tssm, scooby, incredibles, ratproto, others, paste };
             menu.DropDownItems.AddRange(items);
 
             var result = new List<ToolStripMenuItem>();
@@ -633,6 +664,18 @@ namespace IndustrialPark
                     return "Trampoline Block (spiked with driver)";
                 case AssetTemplate.Block_Spikes:
                     return "Spikes";
+                case AssetTemplate.Cheese:
+                    return "Cheese";
+                case AssetTemplate.Stick:
+                    return "Stick";
+                case AssetTemplate.Nut_Can:
+                    return "Nut Can";
+                case AssetTemplate.Lantern:
+                    return "Lantern";
+                case AssetTemplate.Springboard_RP:
+                    return "Springboard";
+                case AssetTemplate.Springboard_RP_Charged:
+                    return "Springboard (Charged)";
             }
 
             return template.ToString().Replace('_', ' ');
@@ -1499,6 +1542,12 @@ namespace IndustrialPark
                     return new AssetZLIN(assetName, position);
                 case AssetTemplate.Rubble_Generator:
                     return new DynaGObjectRubbleGenerator(assetName);
+                case AssetTemplate.Cheese:
+                case AssetTemplate.Stick:
+                case AssetTemplate.Nut_Can:
+                case AssetTemplate.Lantern:
+                case AssetTemplate.Springboard_RP:
+                case AssetTemplate.Springboard_RP_Charged:
                 case AssetTemplate.Floating_Block:
                 case AssetTemplate.Floating_Block_Spiked:
                 case AssetTemplate.Scale_Block:
