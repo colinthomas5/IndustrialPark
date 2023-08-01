@@ -354,7 +354,7 @@
 
         // RatProto Carryables
         Stick,
-        Nut Can,
+        Nut_Can,
         Lantern,
     }
 }
