@@ -352,6 +352,9 @@
         Springboard_RP,
         Springboard_RP_Charged,
 
+        // ...but not for user
+        Springboard_RP_SIMP
+
         // RatProto Carryables
         Stick,
         Nut_Can,
